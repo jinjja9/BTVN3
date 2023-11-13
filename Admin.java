@@ -3,21 +3,24 @@ import java.util.Scanner;
 public class Admin {
     public int adminFunctions;
 
-    public void Menu() {
+   /* public void Menu() {
         System.out.println("1. Them sach moi");
         System.out.println("2. Xoa sach");
         System.out.println("3. Sua sach");
         System.out.println("4. Cac chuc nang cua khach đe test");
         System.out.println("5. Thoat tai khoan admin");
     }
-
+*/
     public void themSach() {
         System.out.println("Nhap ten sach ban muon them:");
         Scanner sc = new Scanner(System.in);
         Book set = new Book();
         set.tieuDe = sc.next();
+        System.out.println("Nhap ten tac gia ban muon them:");
         set.tacGia = sc.next();
+        System.out.println("Nhap ten the loai ban muon them:");
         set.theLoai = sc.next();
+        System.out.println("Nhap ngay xuat ban ban muon them:");
         set.ngayXuatBan = sc.next();
         Main.list.addElement(set);
     }
