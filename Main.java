@@ -10,17 +10,20 @@ public class Main {
         System.out.println("2. GUEST");
         System.out.println("Bạn hãy nhấn phím để chọn");
         while (true) {
-            int option = sc.nextInt();
+            int option;
+            System.out.println("Enter Account: ");
+            String account = sc.nextLine();
+            System.out.println("Enter Password: ");
+            String password = sc.nextLine();
+            if(account.equals("admin") && password.equals("admin"))
+                option=1;
+            else
+                option=2;
             switch (option) {
                 case 1:
-                    System.out.println("Enter Account: ");
-                    String account = sc.next();
-                    System.out.println("Enter Password: ");
-                    String password = sc.next();
-                    if (account.equals("admin") && password.equals("admin")) {
                         System.out.println("Logged in successfully");
                         Admin admin = new Admin();
-                        admin.Menu();
+                      //  admin.Menu();
                         System.out.println("Nhap tinh nang");
                         System.out.println("1. Nhap sach moi");
                         System.out.println("2. Xoa sach");
@@ -43,9 +46,8 @@ public class Main {
                             if (guest.guestFunctions == 1) guest.timKiem();
                             else if (guest.guestFunctions == 2) guest.XemDanhSach();
                         }
-                        else if (admin.adminFunctions == 5) System.out.println("Thoat + bam 0");
+                        else if (admin.adminFunctions == 5) System.out.println("Thoat");
                         break;
-                    }
                 case 2:
                         Guest guest = new Guest();
                         guest.Menu();
